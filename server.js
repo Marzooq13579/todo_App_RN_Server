@@ -1,13 +1,9 @@
 import {app} from "./app.js";
-import {config} from "dotenv";
+import * as dotenv from 'dotenv' 
 import {connectDatabase} from "./config/database.js";
 import cloudinary from "cloudinary";
 
-config({
-    path:"./config/config.env"
-})
-
-
+dotenv.config()
 const PORT = process.env.PORT
 
 cloudinary.config({
@@ -19,6 +15,6 @@ cloudinary.config({
 connectDatabase();
 
 
-app.listen(port,()=> {
+app.listen(PORT,()=> {
     console.log(`server is running on port ${PORT}`)
 })
