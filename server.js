@@ -8,7 +8,7 @@ config({
 })
 
 
-const port = process.env.PORT
+const PORT = process.env.PORT
 
 cloudinary.config({
     cloud_name: process.env.CLOUD_NAME,
@@ -20,5 +20,5 @@ connectDatabase();
 
 
 app.listen(port,()=> {
-    console.log(`server is running on port ${port}`)
+    console.log(`server is running on port ${PORT}`)
 })
